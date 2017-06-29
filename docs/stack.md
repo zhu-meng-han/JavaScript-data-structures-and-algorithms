@@ -7,7 +7,7 @@
 
 ![](_media/stack-1.png)
 
-定义一个栈：
+## 定义栈：
 
 ```js
 class Stack {
