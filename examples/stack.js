@@ -12,7 +12,7 @@ class Stack {
 
   // 出栈
   pop() {
-    this.dataStore.pop();
+    return this.dataStore.pop();
   }
 
   // 是否空栈
@@ -42,15 +42,42 @@ class Stack {
 
 const stack = new Stack();
 
-console.log('isEmpty: ' + stack.isEmpty());
-stack.push('z');
-stack.push('m');
-stack.push('h');
-console.log('size: ' + stack.size());
-console.log('peek: ' + stack.peek());
-stack.show();
+console.log('isEmpty: ' + stack.isEmpty()); // isEmpty: false
+stack.push('zhu');
+stack.push('meng');
+stack.push('han');
+console.log('size: ' + stack.size()); // size: 3
+console.log('peek: ' + stack.peek()); // peek: han
+stack.show(); // zhu,meng,han
 stack.pop();
-stack.show();
+stack.show(); // zhu,meng
 stack.clear();
-console.log('size: ' + stack.size());
+console.log('size: ' + stack.size()); // size: 0
 
+
+// 回文
+/*
+ * 法一
+ */
+function isPalindrome(element) {
+  let stack = new Stack();
+  for(let value of element) {
+    stack.push(value);
+  }
+  let temp = '';
+  while (stack.size()) {
+    temp += stack.pop();
+  }
+  return temp === element;
+}
+
+/*
+ * 法二
+ */
+function isPalindrome(element) {
+  let temp = element.split('').reverse().join();
+  return temp === element;
+}
+
+console.log(isPalindrome('racecar'));
+console.log(isPalindrome('12321'));
