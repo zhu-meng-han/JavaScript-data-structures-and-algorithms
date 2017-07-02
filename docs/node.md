@@ -78,7 +78,13 @@ class LinkedList {
       let previous = null;
       let index = 0;
       if (position === 0) {
-        this.head = node;
+        // 判断head是否为空，
+        if (!this.head) {
+          this.head = node;
+        } else {
+          node.next = current;
+          this.head = node;
+        }
       } else {
         while (index ++ < position) {
           previous = current;

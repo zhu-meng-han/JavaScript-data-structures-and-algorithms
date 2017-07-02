@@ -38,7 +38,12 @@ class LinkedList {
       let previous = null;
       let index = 0;
       if (position === 0) {
-        this.head = node;
+        if (!this.head) {
+          this.head = node;
+        } else {
+          node.next = current;
+          this.head = node;
+        }
       } else {
         while (index ++ < position) {
           previous = current;
@@ -121,11 +126,12 @@ class LinkedList {
 
 const linkedList = new LinkedList();
 
-console.log(linkedList.isEmpty()); // true
+// console.log(linkedList.isEmpty()); // true
 linkedList.append('zhu');
 linkedList.append('meng');
 linkedList.append('han');
-linkedList.insert('han00', 1);
+linkedList.insert('han00', 0);
+
 console.log(linkedList.size()); // 4
 console.log(linkedList.show()); // zhu han00 meng han
 console.log(linkedList.findIndex('meng')); // 2
@@ -133,6 +139,7 @@ console.log(linkedList.removeAt(2)); // true
 console.log(linkedList.show()); // zhu han00 han
 
 */
+
 
 // 链表节点
 class Node {
@@ -260,14 +267,13 @@ const doubleLinkedList = new DoublyLinkedList();
 doubleLinkedList.append('zhu');
 doubleLinkedList.append('meng');
 doubleLinkedList.append('han');
-console.log(doubleLinkedList.show()); // zhu meng han
-doubleLinkedList.insert('han00', 1);
 doubleLinkedList.insert('han00', 0);
+doubleLinkedList.insert('han00', 1);
+console.log(doubleLinkedList.show()); // zhu meng han
 doubleLinkedList.insert('han00', 5);
 console.log(doubleLinkedList.show()); // han00 zhu han00 meng han han00
 doubleLinkedList.removeAt(6);
 console.log(doubleLinkedList.show()); // han00 zhu han00 meng han
 doubleLinkedList.removeAt(1);
 console.log(doubleLinkedList.show()); // han00 han00 meng han
-
 
