@@ -1,4 +1,4 @@
-/*
+
 // 链表节点
 class Node {
   constructor(element) {
@@ -124,23 +124,22 @@ class LinkedList {
   }
 }
 
-const linkedList = new LinkedList();
+// const linkedList = new LinkedList();
 
-// console.log(linkedList.isEmpty()); // true
-linkedList.append('zhu');
-linkedList.append('meng');
-linkedList.append('han');
-linkedList.insert('han00', 0);
+// // console.log(linkedList.isEmpty()); // true
+// linkedList.append('zhu');
+// linkedList.append('meng');
+// linkedList.append('han');
+// linkedList.insert('han00', 0);
 
-console.log(linkedList.size()); // 4
-console.log(linkedList.show()); // zhu han00 meng han
-console.log(linkedList.findIndex('meng')); // 2
-console.log(linkedList.removeAt(2)); // true
-console.log(linkedList.show()); // zhu han00 han
-
-*/
+// console.log(linkedList.size()); // 4
+// console.log(linkedList.show()); // zhu han00 meng han
+// console.log(linkedList.findIndex('meng')); // 2
+// console.log(linkedList.removeAt(2)); // true
+// console.log(linkedList.show()); // zhu han00 han
 
 
+/*
 // 链表节点
 class Node {
   constructor(element) {
@@ -277,3 +276,5 @@ console.log(doubleLinkedList.show()); // han00 zhu han00 meng han
 doubleLinkedList.removeAt(1);
 console.log(doubleLinkedList.show()); // han00 han00 meng han
 
+*/
+module.exports = LinkedList;
