@@ -83,9 +83,11 @@ tree.insert(11)
 tree.insert(7)
 tree.insert(5)
 tree.insert(3)
+tree.insert(6)
 tree.insert(9)
 tree.insert(8)
 tree.insert(10)
+tree.insert(15)
 tree.insert(13)
 tree.insert(12)
 tree.insert(14)
@@ -98,5 +100,222 @@ tree.insert(25)
 
 ![](_media/tree-4.png)
 
-### 树的遍历
+### 遍历二叉树
+
+有三种遍历 `BST(二叉查找树)` 的方式:中序、先序和后序。
+
+##### 中序遍历
+
+> 中序遍历是一种以上行顺序访问 `BST` 所有节点的遍历方式，也就是以从最小到最大的顺序访 问所有节点。
+
+中序遍历的一种应用就是对树进行排序操作。
+
+我们来看它的实现：
+
+```js
+// 中序遍历
+inOrderTraverse(callback) {
+  const orderTraverseNode = (node, callback) => {
+    if (node !== null) {
+      orderTraverseNode(node.left, callback);
+      callback(node.key);
+      orderTraverseNode(node.right, callback);
+    }
+  }
+  orderTraverseNode(this.root, callback);
+}
+```
+
+`inOrderTraverse` 方法接收一个回调函数作为参数，回调函数用来定义我们对遍历到的每个节点进行的操作，这也叫作访问者模式。
+
+在之前展示的树上执行下面的方法：
+
+```js
+tree.inOrderTraverse(value => {
+  console.log(value);
+})
+```
+
+下面的结果将会在控制台上输出（每个数字将会输出在不同的行）:
+
+`3 5 6 7 8 9 10 11 12 13 14 15 18 20 25`
+
+下面的图描绘了 `inOrderTraverse` 方法的访问路径：
+
+![](_media/tree-5.png)
+
+##### 先序遍历
+
+> 先序遍历是以优先于后代节点的顺序访问每个节点的。
+
+先序遍历的一种应用是打印一个结构化的文档。
+
+我们来看它的实现：
+
+```js
+  // 先序遍历
+  preOrderTraverse(callback) {
+    const preOrderTraverseNode = (node, callback) => {
+      if (node !== null) {
+        callback(node.key)
+        preOrderTraverseNode(node.left, callback);
+        preOrderTraverseNode(node.right, callback);
+      }
+    }
+    preOrderTraverseNode(this.root, callback);
+  }
+```
+
+在之前展示的树上执行下面的方法：
+
+```js
+tree.preOrderTraverse(value => {
+  console.log(value);
+})
+```
+
+下面的结果将会在控制台上输出（每个数字将会输出在不同的行）:
+
+`11 7 5 3 6 9 8 10 15 13 12 14 20 18 25`
+
+
+下面的图描绘了 `preOrderTraverse` 方法的访问路径：
+
+![](_media/tree-6.png)
+
+
+##### 后续遍历
+
+> 后序遍历则是先访问节点的后代节点，再访问节点本身。
+
+后序遍历的一种应用是计算一个目录和它的子目录中所有文件所占空间的大小。
+
+我们来看它的实现：
+
+```js
+  // 后续遍历
+  postOrderTraverse(callback) {
+    const postOrderTraverseNode = (node, callback) => {
+      if (node !== null) {
+        postOrderTraverseNode(node.left, callback);
+        postOrderTraverseNode(node.right, callback);
+        callback(node.key);
+      }
+    }
+    postOrderTraverseNode(this.root, callback);
+  }
+```
+
+在之前展示的树上执行下面的方法：
+
+```js
+tree.postOrderTraverse(value => {
+  console.log(value);
+})
+```
+
+下面的结果将会在控制台上输出（每个数字将会输出在不同的行）:
+
+`3 6 5 8 10 9 7 12 14 13 18 25 20 15 11`
+
+
+下面的图描绘了 `postOrderTraverse` 方法的访问路径：
+
+![](_media/tree-7.png)
+
+##### 三种遍历访问顺序
+
+* 先序遍历：节点本身 => 左侧子节点 => 右侧子节点
+* 中序遍历：左侧子节点 => 节点本身 => 右侧子节点
+* 后序遍历：左侧子节点 => 右侧子节点 => 节点本身
+
+
+### 在二叉查找树上进行查找
+
+对 `BST` 通常有下列三种类型的查找:
+
+* 查找给定值
+* 查找最小值
+* 查找最大值
+
+##### 查找最小值 && 最大值
+
+对于下图，你能一眼找到最小值和最大值吗？
+
+![](_media/tree-7.png)
+
+实现：
+
+```js
+  get min() {
+    const minNode = node => {
+      return node ? (node.left ? minNode(node.left): node) : null;
+    }
+
+    return minNode(this.root);
+  }
+
+  get max() {
+    const maxNode = node => {
+      return node ? (node.right ? maxNode(node.right) : node) : null;
+    }
+
+    return maxNode(this.root);
+  }
+```
+
+搜索给定的值：
+
+```js
+  search(key) {
+    const searchNode = (node, key) => {
+      if (node === null) return null;
+      if (node.key === key) return node;
+      return searchNode(key < node.key ? node.left : node.right, key);
+    }
+
+    return searchNode(this.root, key);
+  }
+```
+
+删除节点：
+
+```js
+  // 移除节点
+  remove(key) {
+    const removeNode = (node, key) => {
+      if (node === null) return null;
+      if (node.key > key) {
+        node.left = removeNode(node.left, key);
+        return node;
+      }
+      if (node.key < key) {
+        node.right = removeNode(node.right, key);
+        return node;
+      }
+      if (node.key === key) {
+        if (node.left === null && node.right === null) {
+          node = null;
+          return node;
+        }
+        if (node.left === null) {
+          node = node.right;
+          return node;
+        }
+        if (node.right === null) {
+          node = node.left;
+          return node;
+        }
+        const tempNode = this.min(node.right);
+        node.key = tempNode.key;
+        node.right = removeNode(node.right, tempNode.key);
+        return node;
+      }
+    }
+
+    return removeNode(this.root, key);
+  }
+```
+
+
 
