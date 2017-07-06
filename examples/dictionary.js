@@ -40,14 +40,16 @@ class Dictionary {
   }
 }
 
-const dictionary = new Dictionary();
+// const dictionary = new Dictionary();
 
-dictionary.add('one', 'zhu');
-dictionary.add('two', 'meng');
-dictionary.add('three', 'han');
-console.log(dictionary.keys()); // [ 'one', 'two', 'three' ]
-console.log(dictionary.values()); // [ 'zhu', 'meng', 'han' ]
-console.log(dictionary.find('two')); // meng
-dictionary.remove('two');
-console.log(dictionary.keys()); // [ 'one', 'three' ]
-console.log(dictionary.values()); // [ 'zhu, 'han' ]
+// dictionary.add('one', 'zhu');
+// dictionary.add('two', 'meng');
+// dictionary.add('three', 'han');
+// console.log(dictionary.keys()); // [ 'one', 'two', 'three' ]
+// console.log(dictionary.values()); // [ 'zhu', 'meng', 'han' ]
+// console.log(dictionary.find('two')); // meng
+// dictionary.remove('two');
+// console.log(dictionary.keys()); // [ 'one', 'three' ]
+// console.log(dictionary.values()); // [ 'zhu, 'han' ]
+
+module.exports = Dictionary;
