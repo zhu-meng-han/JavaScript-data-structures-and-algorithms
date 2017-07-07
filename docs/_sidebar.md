@@ -7,4 +7,6 @@
   - [集合](/set.md)
   - [树](/tree.md)
   - [图](/graph.md)
+- [排序算法](sortAlgorithm.md)
+  - [冒泡排序](/bubbleSort.md)
 
