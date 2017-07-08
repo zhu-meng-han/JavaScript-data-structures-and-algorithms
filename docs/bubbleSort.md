@@ -20,7 +20,7 @@
 
 ![](_media/sort-2.gif)
 
-代码示例：
+### 代码示例：
 
 ```js
 function bubbleSort(arr) {
