@@ -14,5 +14,7 @@ function bubbleSort(arr) {
 }
 
 const arr = [3, 44 ,38 , 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48];
+const start = Date.now();
 console.log(bubbleSort(arr));
+console.log('time : ' + (Date.now() - start));
 // [ 2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 48, 50 ]

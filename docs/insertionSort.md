@@ -10,10 +10,25 @@
 
 ### 动图演示
 
-![](_media/sort-6.gif)
+![](_media/sort-5.gif)
 
 ### 代码示例：
 
 ```js
+function insertionSort(arr) {
+  const len = arr.length;
+  for (let i = 1; i < len; i++) {
+    let preIndex = i - 1;
+    let current = arr[i];
+    while(preIndex >= 0 && arr[preIndex] > current) {
+      arr[preIndex + 1] = arr[preIndex];
+      preIndex --;
+    }
+    arr[preIndex + 1] = current;
+  }
+  return arr;
+}
 
+const arr = [3, 44 ,38 , 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48];
+console.log(insertionSort(arr));
 ```
