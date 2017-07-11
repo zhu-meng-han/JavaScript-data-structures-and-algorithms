@@ -14,4 +14,7 @@
   - [希尔排序](/shellSort.md)
   - [归并排序](/mergeSort.md)
   - [快速排序](/quickSort.md)
+- [搜索算法](searchSort.md)
+  - [顺序查找](sequenceSearch.md)
+  - [二分查找](binarySearch.md)
 
