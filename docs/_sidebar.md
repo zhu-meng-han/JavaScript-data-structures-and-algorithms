@@ -13,4 +13,5 @@
   - [插入排序](/insertionSort.md)
   - [希尔排序](/shellSort.md)
   - [归并排序](/mergeSort.md)
+  - [快速排序](/quickSort.md)
 
