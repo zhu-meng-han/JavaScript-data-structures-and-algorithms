@@ -13,7 +13,8 @@ function insertionSort(arr) {
   return arr;
 }
 
-const arr = [3, 44 ,38 , 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48];
-const start = Date.now();
-console.log(insertionSort(arr));
-console.log('time : ' + (Date.now() - start));
+// const arr = [3, 44 ,38 , 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48];
+// const start = Date.now();
+// console.log(insertionSort(arr));
+// console.log('time : ' + (Date.now() - start));
+
