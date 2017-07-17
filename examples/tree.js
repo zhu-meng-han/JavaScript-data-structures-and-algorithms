@@ -100,6 +100,16 @@ class BinarySearchTree {
 
     return searchNode(this.root, key);
   }
+  // 查找父节点
+  searchParentNode(key) {
+    const searchNode = (node, key) => {
+      if (node === null || (node.left === null && node.right === null)) return null;
+      if (node.left.key === key || node.right.key === key) return node;
+      return searchNode(key < node.key ? node.left : node.right, key);
+    }
+
+    return searchNode(this.root, key);
+  }
 
   // 移除节点
   remove(key) {
@@ -160,6 +170,8 @@ tree.insert(25)
 //   console.log(value);
 // })
 
+console.log(tree.searchParentNode(25));
+
 // console.log(' ----- ');
 
 // tree.preOrderTraverse(value => {
@@ -176,7 +188,7 @@ tree.insert(25)
 // console.log(tree.max());
 // console.log(tree.root);
 // console.log(tree.search(5));
-tree.remove(11);
-console.log(tree.remove(11));
-console.log(tree.root);
-console.log(tree.search(13));
+// tree.remove(11);
+// console.log(tree.remove(11));
+// console.log(tree.root);
+// console.log(tree.search(13));

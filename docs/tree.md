@@ -278,6 +278,21 @@ tree.postOrderTraverse(value => {
   }
 ```
 
+查找父节点：
+
+```js
+  // 查找父节点
+  searchParentNode(key) {
+    const searchNode = (node, key) => {
+      if (node === null || (node.left === null && node.right === null)) return null;
+      if (node.left.key === key || node.right.key === key) return node;
+      return searchNode(key < node.key ? node.left : node.right, key);
+    }
+
+    return searchNode(this.root, key);
+  }
+```
+
 删除节点：
 
 ```js
