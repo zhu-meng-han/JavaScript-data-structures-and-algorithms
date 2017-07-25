@@ -170,7 +170,7 @@ tree.insert(25)
 //   console.log(value);
 // })
 
-console.log(tree.searchParentNode(25));
+// console.log(tree.searchParentNode(25));
 
 // console.log(' ----- ');
 
@@ -192,3 +192,18 @@ console.log(tree.searchParentNode(25));
 // console.log(tree.remove(11));
 // console.log(tree.root);
 // console.log(tree.search(13));
+
+let len  = 10000000;
+let arr = [],
+    arrs = [];
+console.time('len')
+for(let i = 0; i < len; ++i) {
+  arr.push(i);
+}
+console.timeEnd('len')
+
+console.time('nolen');
+for (let i = 0; i < 10000000; ++i) {
+  arrs.push(i);
+}
+console.timeEnd('nolen');
