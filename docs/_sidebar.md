@@ -1,4 +1,4 @@
-- 数据结构
+- [数据结构](dataStructures.md)
   - [栈](/stack.md)
   - [队列](/queue.md)
   - [链表](/node.md)
@@ -11,13 +11,15 @@
   - [冒泡排序](/bubbleSort.md)
   - [选择排序](/selectionSort.md)
   - [插入排序](/insertionSort.md)
-  - [希尔排序](/shellSort.md)
   - [归并排序](/mergeSort.md)
   - [快速排序](/quickSort.md)
+  - [希尔排序](/shellSort.md)
   - [计数排序](/countingSort.md)
   - [桶排序](/bucketSort.md)
   - [基数排序](/radixSort.md)
 - [搜索算法](searchSort.md)
   - [顺序查找](sequenceSearch.md)
   - [二分查找](binarySearch.md)
+- [高级算法](advancedAlgorithms.md)
+- [选择排序算法的参考方法](selectSortFunction.md)
 

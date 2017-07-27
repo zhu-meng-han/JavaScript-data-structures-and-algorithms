@@ -5,7 +5,7 @@
 
 
 [GitHub](https://github.com/zmh7057/JavaScript-data-structures-and-algorithms/)
-[Get Started](#JavaScript-data-structures-and-algorithms)
+[Get Started](#javascript-数据结构与算法)
 
 <!-- 背景图片 -->
 ![](_media/background.png)
