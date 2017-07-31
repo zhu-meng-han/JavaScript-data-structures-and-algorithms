@@ -17,7 +17,7 @@
   - [计数排序](/countingSort.md)
   - [桶排序](/bucketSort.md)
   - [基数排序](/radixSort.md)
-- [搜索算法](searchSort.md)
+- [检索算法](searchSort.md)
   - [顺序查找](sequenceSearch.md)
   - [二分查找](binarySearch.md)
 - [高级算法](advancedAlgorithms.md)
