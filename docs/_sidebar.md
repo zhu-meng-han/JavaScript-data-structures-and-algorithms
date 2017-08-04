@@ -21,5 +21,7 @@
   - [顺序查找](sequenceSearch.md)
   - [二分查找](binarySearch.md)
 - [高级算法](advancedAlgorithms.md)
+  - [动态规划](dynamicProgram.md)
+  - [贪心算法]()
 - [选择排序算法的参考方法](selectSortFunction.md)
 

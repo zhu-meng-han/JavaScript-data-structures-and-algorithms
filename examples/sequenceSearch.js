@@ -13,17 +13,10 @@ Array.prototype.sequenceSearch = function(value) {
 
 class SequenceSearch {
 
-  constructor() {
-    this.dataSore = [];
+  constructor(data) {
+    this.dataSore = data;
   }
 
-  add(value) {
-    this.dataSore.push(value);
-  }
-  concat(value) {
-    this.dataSore = this.dataSore.concat(value);
-    // console.log(this.dataSore);
-  }
   len() {
     return this.dataSore.length;
   }
@@ -75,15 +68,15 @@ class SequenceSearch {
 
 const arr = [3, 44 , 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48];
 
-const sequence = new SequenceSearch();
-sequence.concat(arr);
+const sequence = new SequenceSearch(arr);
 
 // console.log(sequence.sequenceSearch(47));
 // sequence.seqSearch(47);
 // console.log(sequence.seqSearch(47));
 
-for (let i = 0; i < 5; ++i) {
+for (let i = 0; i < 6; ++i) {
   sequence.print();
-  console.log(sequence.seqSearch(47));
+  // console.log(sequence.seqSearch(47));
+  console.log(sequence.OtherSeqSearch(47));
 }
 

@@ -39,12 +39,8 @@ console.log(arr.sequenceSearch(47));
 ```js
 class SequenceSearch{
 
-  constructor() {
-    this.dataStore = [];
-  }
-
-  concat(value) {
-    this.dataStore = this.dataStore.concat(value);
+  constructor(data) {
+    this.dataStore = data || [];
   }
 
   len() {
@@ -74,10 +70,9 @@ class SequenceSearch{
 }
 
 const arr = [3, 44 , 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48];
-const sequence = new SequenceSearch();
-sequence.concat(arr);
+const sequence = new SequenceSearch(arr);
 
-for (let i = 0; i < 5; ++i) {
+for (let i = 0; i < 6; ++i) {
   console.log(sequence.seqSearch(47));
   sequence.print();
 }
@@ -85,6 +80,7 @@ for (let i = 0; i < 5; ++i) {
 /*
  * 输出
  */
+
 [ 3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48 ]
 4
 [ 3, 44, 38, 47, 5, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48 ]
@@ -93,6 +89,8 @@ for (let i = 0; i < 5; ++i) {
 2
 [ 3, 47, 44, 38, 5, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48 ]
 1
+[ 47, 3, 44, 38, 5, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48 ]
+0
 [ 47, 3, 44, 38, 5, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48 ]
 0
 ```
